@@ -4,12 +4,23 @@ import {
   Nav,
   NavItem,
 } from 'react-bootstrap';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import { Router, Link } from 'react-router-dom';
 
 
 class TopAppBarNav extends Component {
   render() {
     return (
+      <AppBar position="static" color="default"> 
+        <Toolbar>
+          <h3>
+            Classic Monuments
+          </h3>
+        </Toolbar>
+      </AppBar>
+    );
+    /* return (
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
@@ -31,7 +42,9 @@ class TopAppBarNav extends Component {
           </NavItem>
         </Nav>
       </Navbar>
+
     );
+    */
   }
 }
 
