@@ -5,7 +5,10 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@material-ui/core": "^3.6.1",
+    "@material-ui/icons": "^3.0.1",
     "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-table-next": "^0.1.15",

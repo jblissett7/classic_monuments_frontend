@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import {
-  FormControl,
-  FormGroup,
-  ControlLabel,
-  Radio,
-} from 'react-bootstrap';
 import Axios from 'axios';
-import { Button } from '../../node_modules/rmwc';
 
 class MonumentCreationForm extends Component {
   constructor(props) {

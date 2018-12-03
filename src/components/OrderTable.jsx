@@ -5,61 +5,61 @@ import Axios from 'axios';
 
 const columns = [{
   Header: 'Last Name',
-  accessor: 'last_name' 
+  accessor: 'last_name',
 }, {
   Header: 'First Name',
-  accessor: 'first_name'
+  accessor: 'first_name',
 }, {
   Header: 'Status',
-  accessor: 'status'
+  accessor: 'status',
 }, {
   Header: 'Cemetery',
-  accessor: 'cemetery'
+  accessor: 'cemetery',
 }, {
   Header: 'Ordered By',
-  accessor: 'ordered_by'
+  accessor: 'ordered_by',
 }, {
   Header: 'Address',
-  accessor: 'address'
+  accessor: 'address',
 }, {
   Header: 'Phone Number',
-  accessor: 'phone_number'
+  accessor: 'phone_number',
 }, {
   Header: 'Email',
-  accessor: 'email'
+  accessor: 'email',
 }, {
   Header: 'Total Fees',
-  accessor: 'total_fees_cents'
+  accessor: 'total_fees_cents',
 }, {
   Header: 'Balance Due',
-  accessor: 'balance_due_cents'
-}
+  accessor: 'balance_due_cents',
+},
 ];
 
 class OrderTable extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      orders: []
-    }
+      orders: [],
+    };
   }
 
   componentDidMount() {
     Axios.get('orders.json')
-    .then(res => {
-      const orders = res.data;
-      this.setState({ orders });
-    });
+      .then((res) => {
+        const orders = res.data;
+        this.setState({ orders });
+      });
   }
 
   render() {
+    const { orders } = this.state;
     return (
       <ReactTable
-        data={ this.state.orders }
-        columns={ columns } 
+        data={orders}
+        columns={columns}
         filterable
-        />
+      />
     );
   }
 }
