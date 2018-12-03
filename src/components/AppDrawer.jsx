@@ -6,6 +6,7 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import RenderButtonLink from './RenderButtonLink';
+import NavBarStyles from '../styles/NavBarStyles';
 
 const drawerWidth = 240;
 const styles = theme => ({
@@ -63,4 +64,4 @@ class AppDrawer extends Component {
   }
 }
 
-export default withStyles(styles, {withTheme: true })(AppDrawer);
+export default withStyles(NavBarStyles, { withTheme: true })(AppDrawer);
