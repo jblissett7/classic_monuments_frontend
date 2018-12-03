@@ -42,6 +42,7 @@ class AppDrawer extends Component {
         <List>
           <RenderButtonLink to="/orders" primary="Orders" />
           <RenderButtonLink to="/monuments" primary="Monuments" />
+          <RenderButtonLink to="/orders/new" primary="Create Orders" />
         </List>
       </Drawer>
     );
