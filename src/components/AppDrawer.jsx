@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
@@ -16,6 +17,7 @@ class AppDrawer extends Component {
   }
 
   handleClick() {
+    // eslint-disable-next-line react/destructuring-assignment
     this.props.onDrawerClose(true);
   }
 
@@ -45,5 +47,11 @@ class AppDrawer extends Component {
     );
   }
 }
+
+AppDrawer.propTypes = {
+  classes: PropTypes.shape.isRequired,
+  open: PropTypes.shape.isRequired,
+  onDrawerClose: PropTypes.isRequired,
+};
 
 export default withStyles(NavBarStyles, { withTheme: true })(AppDrawer);

@@ -11,8 +11,9 @@ class RenderButtonLink extends Component {
   }
 
   renderLink(itemProps) {
+    const { to } = this.props;
     return (
-      <Link to={this.props.to} {...itemProps} />
+      <Link to={to} {...itemProps} />
     );
   }
 

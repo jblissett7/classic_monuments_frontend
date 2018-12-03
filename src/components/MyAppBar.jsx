@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
@@ -16,11 +17,12 @@ class MyAppBar extends Component {
   }
 
   handleClick() {
+    // eslint-disable-next-line react/destructuring-assignment
     this.props.onDrawerOpen();
   }
 
   render() {
-    const { classes, theme, open } = this.props;
+    const { classes, open } = this.props;
     return (
       <AppBar
         position="fixed"
@@ -46,5 +48,11 @@ class MyAppBar extends Component {
     );
   }
 }
+
+MyAppBar.propTypes = {
+  classes: PropTypes.shape.isRequired,
+  open: PropTypes.shape.isRequired,
+  onDrawerOpen: PropTypes.isRequired,
+};
 
 export default withStyles(NavBarStyles, { withTheme: true })(MyAppBar);

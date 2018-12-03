@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -26,7 +27,7 @@ class NavBarContainer extends Component {
   }
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes } = this.props;
     const { open } = this.state;
     return (
       <div className={classes.root}>
@@ -45,5 +46,9 @@ class NavBarContainer extends Component {
     );
   }
 }
+
+NavBarContainer.propTypes = {
+  classes: PropTypes.shape.isRequired,
+};
 
 export default withStyles(NavBarStyles, { withTheme: true })(NavBarContainer);
