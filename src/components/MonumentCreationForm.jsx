@@ -35,7 +35,7 @@ class MonumentCreationForm extends Component {
       length,
       width,
       height,
-      single_or_double
+      single_or_double,
     } = this.state;
     Axios.post('/monuments', {
       monument: {
@@ -54,6 +54,7 @@ class MonumentCreationForm extends Component {
   }
 
   render() {
+    const { value } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <select
@@ -78,7 +79,7 @@ class MonumentCreationForm extends Component {
         <input
           name="Length"
           type="text"
-          value={this.state.value}
+          value={value}
           placeholder="Length in inches"
           onChange={this.handleChange}
         />
@@ -86,7 +87,7 @@ class MonumentCreationForm extends Component {
         <input
           name="Width"
           type="text"
-          value={this.state.value}
+          value={value}
           placeholder="Width in inches"
           onChange={this.handleChange}
         />
@@ -94,7 +95,7 @@ class MonumentCreationForm extends Component {
         <input
           name="Height"
           type="text"
-          value={this.state.value}
+          value={value}
           placeholder="Height in inches"
           onChange={this.handleChange}
         />

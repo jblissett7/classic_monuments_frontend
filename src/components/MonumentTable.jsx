@@ -6,16 +6,15 @@ import Axios from 'axios';
 const columns = [{
   Header: 'Monument Type',
   accessor: 'monument_type',
-  Filter: ({ filter, onChange }) =>
-    <select
-      onChange={event => onChange(event.target.value)}
-      value={filter ? filter.value : 'all'}
-    >
-      <option value='all'>All Monument Types</option>
-      <option value='Bevel'>Bevel</option>
-      <option value='Slant'>Slant</option>
-      <option value='Flat'>Flat</option>
-    </select>
+  Filter: ({ filter, onChange }) => <select
+    onChange={event => onChange(event.target.value)}
+    value={filter ? filter.value : 'all'}
+  >
+    <option value="all">All Monument Types</option>
+    <option value="Bevel">Bevel</option>
+    <option value="Slant">Slant</option>
+    <option value="Flat">Flat</option>
+  </select>
 }, {
   Header: 'Color',
   accessor: 'color',

@@ -5,15 +5,11 @@ import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';
 import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import RenderButtonLink from './RenderButtonLink';
 import Main from './Main';
+import AppDrawer from './AppDrawer';
 
 const drawerWidth = 240;
 
@@ -119,26 +115,7 @@ class TopAppBarNav extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer
-          className={classes.drawer}
-          variant="persistent"
-          anchor="left"
-          open={open}
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-        >
-          <div className={classes.drawerHeader}>
-            <IconButton onClick={this.handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <Divider />
-          <List>
-            <RenderButtonLink to="/orders" primary="Orders" />
-            <RenderButtonLink to="/monuments" primary="Monuments" />
-          </List>
-        </Drawer>
+        <AppDrawer open={this.state.open} onDrawerClose={this.handleDrawerClose} />
         <main
           className={classNames(classes.content, {
             [classes.contentShift]: open,
