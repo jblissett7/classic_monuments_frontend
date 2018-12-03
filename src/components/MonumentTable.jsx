@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
-import 'react-table/react-table.css'
+import 'react-table/react-table.css';
 import Axios from 'axios';
 
 const columns = [{
   Header: 'Monument Type',
-  accessor: "monument_type",
+  accessor: 'monument_type',
   Filter: ({ filter, onChange }) =>
     <select
       onChange={event => onChange(event.target.value)}
@@ -45,15 +45,15 @@ const columns = [{
     </select>
 }, {
   Header: 'Length',
-  accessor: 'length'
+  accessor: 'length',
 }, {
-  Header: "Width",
-  accessor: 'width'
+  Header: 'Width',
+  accessor: 'width',
 }, {
   Header: 'Height',
-  accessor: 'Height'
+  accessor: 'Height',
 }, {
-  Header: "Single Or Double",
+  Header: 'Single Or Double',
   accessor: 'single_or_double',
   Filter: ({ filter, onChange }) =>
     <select
@@ -67,33 +67,35 @@ const columns = [{
 }, {
   Header: 'Price',
   accessor: 'price_cents',
-  Cell: e =><a href="root"> {`$ ${e.value}` }</a>
+  Cell: e => <a href="root">
+    {`$ ${e.value}` }
+    </a>
 }];
 
 class MonumentTable extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      monuments: []
-    }
+      monuments: [],
+    };
   }
 
   componentDidMount() {
     console.log('Inside componentDidMount');
     Axios.get('monuments.json')
-    .then(res => {
-      const monuments = res.data;
-      this.setState({ monuments });
-    });
+      .then((res) => {
+        const monuments = res.data;
+        this.setState({ monuments });
+      });
   }
-  
+
   render() {
-    console.log('Hello World')
+    console.log('Hello World');
+    const { monuments } = this.state;
     return (
       <ReactTable
-        data={ this.state.monuments }
-        columns={ columns }
+        data={monuments}
+        columns={columns}
         filterable
       />
     );
