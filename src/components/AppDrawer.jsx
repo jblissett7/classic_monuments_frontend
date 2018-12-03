@@ -8,24 +8,6 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import RenderButtonLink from './RenderButtonLink';
 import NavBarStyles from '../styles/NavBarStyles';
 
-const drawerWidth = 240;
-const styles = theme => ({
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-  },
-});
-
 class AppDrawer extends Component {
   constructor(props) {
     super(props);
