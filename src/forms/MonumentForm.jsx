@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 
-class OrderForm extends Component {
+class MonumentForm extends Component {
   constructor(props) {
     super(props);
 
@@ -13,19 +13,25 @@ class OrderForm extends Component {
   }
 
   render() {
-    const { firstName, lastName } = this.props;
+    const { length, width, height } = this.props;
     return (
       <form>
         <TextField
-          id="firstName"
-          label="First Name"
-          value={firstName}
+          id="length"
+          label="Length"
+          value={length}
           onChange={this.handleChange}
         />
         <TextField
-          id="lastName"
-          label="Last Name"
-          value={lastName}
+          id="width"
+          label="Width"
+          value={width}
+          onChange={this.handleChange}
+        />
+        <TextField
+          id="height"
+          label="Height"
+          value={height}
           onChange={this.handleChange}
         />
       </form>
@@ -33,4 +39,4 @@ class OrderForm extends Component {
   }
 }
 
-export default OrderForm;
+export default MonumentForm;

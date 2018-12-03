@@ -5,14 +5,18 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import OrderForm from '../forms/OrderForm';
+import MonumentForm from '../forms/MonumentForm';
 
-class OrderFormContainer extends Component {
+class MonumentFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
+      monumentType: '',
+      color: '',
+      length: '',
+      width: '',
+      height: '',
+      singleOrDouble: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,19 +33,13 @@ class OrderFormContainer extends Component {
   }
 
   render() {
-    const { firstName, lastName } = this.state;
     return (
       <Grid container>
         <Grid item xs={8}>
           <Card>
-            <CardHeader title="Create Order" />
+            <CardHeader title="Create Monument" />
             <CardContent>
-              <OrderForm
-                firstName={firstName}
-                lastName={lastName}
-                onInputChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-              />
+              <MonumentForm onInputChange={this.handleChange} onSubmit={this.handleSubmit} />
             </CardContent>
             <CardActions>
               <Button onClick={this.handleSubmit}>
@@ -55,4 +53,4 @@ class OrderFormContainer extends Component {
   }
 }
 
-export default OrderFormContainer;
+export default MonumentFormContainer;

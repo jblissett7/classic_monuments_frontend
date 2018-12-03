@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import OrderTable from './OrderTable';
 import MonumentTable from './MonumentTable';
-import MonumentCreationForm from './MonumentCreationForm';
 import OrderFormContainer from '../containers/OrderFormContainer';
+import MonumentFormContainer from '../containers/MonumentFormContainer';
 
 class Main extends Component {
   render() {
@@ -11,7 +11,7 @@ class Main extends Component {
       <main>
         <Route exact path="/orders" component={OrderTable} />
         <Route exact path="/monuments" component={MonumentTable} />
-        <Route path="/monuments/new" component={MonumentCreationForm} />
+        <Route path="/monuments/new" component={MonumentFormContainer} />
         <Route path="/orders/new" component={OrderFormContainer} />
       </main>
     );
